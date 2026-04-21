@@ -1,0 +1,47 @@
+pyacoustid
+musicbrainzngs
+mutagen
+requests
+fastapi[standard]
+redis
+pydantic-settings
+# 数据库 & ORM
+SQLAlchemy
+sqlmodel
+databases[postgresql]
+alembic
+
+# 用户系统 & 认证
+fastapi-users[sqlalchemy2]
+fastapi-jwt-auth
+passlib[bcrypt]
+
+# 数据序列化 & 高速 JSON
+pydantic
+orjson
+
+# 缓存
+fastapi-cache2[redis]
+redis
+
+# 日志
+loguru
+
+# 监控
+prometheus-fastapi-instrumentator
+
+# 异步文件操作
+aiofiles
+python-multipart
+
+celery
+
+pytest
+pytest-asyncio
+httpx
+pytest-cov
+fakeredis
+pytest-mock
+pytest-xdist
+pytest-html
+pytest-rerunfailures

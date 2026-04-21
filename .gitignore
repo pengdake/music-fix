@@ -1,0 +1,12 @@
+# Python 编译文件
+*.pyc
+*.pyo
+*.pyd
+
+# Python 缓存目录
+__pycache__/
+
+# 其他常见的 Python 临时文件
+.Python
+*.py[cod]
+*$py.class
