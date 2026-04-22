@@ -5,6 +5,9 @@ EXPOSE 8000
 # 避免交互
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
+ENV MUSIC_DIR=/music
+ENV ACOUSTID_API_KEY="Rz2fUjCuDH"
+ENV PYTHONPATH=/app
 
 # 安装系统依赖
 # 编译安装 chromaprint
@@ -27,10 +30,6 @@ COPY app /app
 
 # 创建工作目录
 WORKDIR /app
-
-# 默认扫描目录
-ENV MUSIC_DIR=/music
-ENV ACOUSTID_API_KEY="Rz2fUjCuDH"
 
 # 开发容器默认命令
 CMD ["fastapi", "run", "main/app.py", "--host", "0.0.0.0", "--port", "8000"]
