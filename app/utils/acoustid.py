@@ -149,7 +149,7 @@ def sync_music_metadata(music_dir):
     return failed_files
 
 if __name__ == "__main__":
-    from app.core.logger import setup_logger
+    from core.logger import setup_logger
     setup_logger()
     music_dir = sys.argv[1]
     if not os.path.isdir(music_dir):
