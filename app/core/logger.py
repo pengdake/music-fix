@@ -3,31 +3,19 @@ import os
 from loguru import logger
 
 
-from loguru import logger
-import sys
-import json
-
 def setup_logger():
     logger.remove()
 
-    def formatter(record):
-        return json.dumps({
-            "@timestamp": record["time"].isoformat(),
-            "log.level": record["level"].name,
-            "message": record["message"],
-            "log.logger": record["name"],
-            "process.thread.name": record["thread"].name,
-            "process.pid": record["process"].id,
-            "source.file": record["file"].path,
-            "source.line": record["line"],
-        }, ensure_ascii=False)
+    log_level = os.getenv("LOG_LEVEL", "INFO")
+    env = os.getenv("ENV", "prod")
 
     logger.add(
         sys.stdout,
-        level="INFO",
-        format=formatter,
-        backtrace=False,
-        diagnose=False,
+        level=log_level,
+        serialize=True,
+        enqueue=True,
+        backtrace=env == "dev",
+        diagnose=env == "dev",
     )
 
     return logger
