@@ -1,7 +1,7 @@
 import pytest
 from app.main import app
 from app.schemas.common import ResponseModel
-from app.api.routers.music import get_music_service
+from app.api.v1.music import get_music_service
 
 def test_identify_music_api(mocker, client, music_service, upload_file):
     # Mock the get_metadata method of the music service

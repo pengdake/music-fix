@@ -6,10 +6,7 @@ from fastapi import File, UploadFile, APIRouter, Depends, HTTPException, status
 from typing import Annotated
 
 
-router = APIRouter(
-    prefix="/music",
-    tags=["music"],
-)
+router = APIRouter()
 
 @router.post(
     "/identify", 

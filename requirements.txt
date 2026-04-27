@@ -6,7 +6,7 @@ fastapi[standard]
 redis
 pydantic-settings
 # 数据库 & ORM
-SQLAlchemy
+SQLAlchemy[asyncio]
 sqlmodel
 databases[postgresql]
 alembic
